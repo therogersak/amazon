@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { search } from '../features/SearchSlice'
 
 function Header() {
+  const { cart } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
   return (
     <header className="w-full bg-black px-3 py-2 flex text-white flex gap-3 overflow-x-scroll whitespace-nowrap ">
       <div className="header_left flex items-center gap-3">
         <div className="logo-container w-[100px]">
-          <img
-            className="w-full h-full pt-2"
-            src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-            alt="amazon-logo"
-          />
+          <Link to="/">
+            <img
+              className="w-full h-full pt-2"
+              src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+              alt="amazon-logo"
+            />
+          </Link>
         </div>
         <div className="location flex items-center gap-1">
           <PlaceOutlinedIcon />
@@ -48,8 +56,9 @@ function Header() {
         <input
           type="text"
           name="search"
-          className="w-full h-full outline-none"
+          className="w-full h-full outline-none text-black pl-2"
           id="search"
+          onChange={(e) => dispatch(search(e.target.value))}
         />
         <div className="h-full grid place-items-center px-3 rounded-br-md rounded-tr-md search_icon text-black bg-[#F2A747]">
           <SearchOutlinedIcon />
@@ -61,23 +70,27 @@ function Header() {
             💚 HI <ArrowDropDownOutlinedIcon />{" "}
           </h3>
         </div>
-        <div>
-          <p className="text-[13px]">Hello, sign in</p>
-          <div className="flex">
-            <h3 className="text-[14px] font-bold">Account & Lists</h3>
-            <ArrowDropDownOutlinedIcon />
+        <Link to="/signin">
+          <div>
+            <p className="text-[13px]">Hello, sign in</p>
+            <div className="flex">
+              <h3 className="text-[14px] font-bold">Account & Lists</h3>
+              <ArrowDropDownOutlinedIcon />
+            </div>
           </div>
-        </div>
+        </Link>
         <div>
           <p className="text-[13px]">Returns</p>
           <h3 className="text-[14px] font-bold">& Orders</h3>
         </div>
-        <div className="relative px-5">
-          <h3 className="absolute -top-3 right-3 font-bold text-yellow-500">
-            2
-          </h3>
-          <ShoppingBasketOutlinedIcon className="" />
-        </div>
+        <Link to="/cart">
+          <div className="relative px-5">
+            <h3 className="absolute text-[1.2rem] -top-3 right-3 font-bold text-orange-500">
+              {cart.length}
+            </h3>
+            <ShoppingBasketOutlinedIcon className="" />
+          </div>
+        </Link>
       </div>
     </header>
   );

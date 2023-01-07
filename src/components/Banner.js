@@ -1,6 +1,5 @@
 import React from "react";
 // Import Swiper React components
-import {Autoplay} from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -16,7 +15,6 @@ function Banner() {
       slidesPerView={3}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
-      modules={[Autoplay]}
       loop={true}
     >
       <SwiperSlide>
