@@ -5,7 +5,7 @@ function SubTotal({ cart }) {
   return (
     <div className="bg-gray-100 shadow-xl p-5 flex-[0.30] border sticky top-0 left-0 h-fit">
       <h3 className="text-lg">
-        Subtotal ({cart.length} item):{" "}
+        Subtotal ({cart?.length} item):{" "}
         <span className="font-bold">${total}</span>
       </h3>
       <div className="flex items-center pb-3">

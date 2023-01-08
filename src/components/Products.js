@@ -6,7 +6,7 @@ function Products() {
   const { data } = useGetAllProductsQuery();
   console.log(data);
   return (
-    <div className="products_grid">
+    <div className="products_grid p-5">
       {data?.products?.map(({ id, thumbnail }) => (
         <Product id={id} key={id} thumbnail={thumbnail} />
       ))}

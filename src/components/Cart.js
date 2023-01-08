@@ -2,15 +2,19 @@ import React from "react";
 import SubTotal from "./SubTotal";
 import { Link, useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteCart } from "../features/CartSlice";
 
 function Cart() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { cart } = useSelector((state) => state.cart);
 
+ 
+
   return (
     <>
-      {cart.length <= 0 ? (
+      {cart?.length <= 0 ? (
         <div className="bg-white max-w-7xl border p-6 mx-auto">
           <div className="flex items-center justify-center flex-col space-y-1">
             <div className="w-[250px]">
@@ -36,8 +40,11 @@ function Cart() {
           <div className="p-5 flex-[1] shadow-2xl border">
             <div className="border-b pb-5 border-gray-300">
               <h3 className="text-2xl">Shopping Cart</h3>
-              <button className="text-blue-600 text-[14px]">
-                Deselect all items
+              <button
+                className="text-blue-600 text-[14px]"
+                onClick={() => dispatch(deleteCart())}
+              >
+                Delete all items
               </button>
             </div>
             <div>

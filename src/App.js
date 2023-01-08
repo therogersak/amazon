@@ -56,7 +56,7 @@ function App() {
           />
 
         <Route
-            path="search/:query"
+            path="search/"
             element={
               <>
                 <Header />

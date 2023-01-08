@@ -16,18 +16,6 @@ html {
   display: none;
 }
 
-.swiper {
-  width: 100% !important;
-}
-
-.swiper-wrapper {
-  width: 100% !important;
-}
-
-.swiper-slide {
-  width: 100% !important;
-  margin: 0;
-}
 
 button {
   cursor: pointer;
@@ -41,4 +29,9 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-flow: dense;
+}
+
+
+.test{
+  width: 100% !important;
 }

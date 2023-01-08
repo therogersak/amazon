@@ -18,7 +18,7 @@ function CartItem({ title, price, id, img }) {
         <p className="font-bold">${price}</p>
         <div>
           <div className="py-2">
-            <label className="pr-2 font-bold text-yellow-500">Qty:</label>
+            <label className="pr-2 font-bold text-orange-500">Qty:</label>
             <input
               type="number"
               name="quantity"

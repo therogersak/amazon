@@ -3,9 +3,10 @@ import React from "react";
 function SwiperChild({ img }) {
   return (
     <div
-      className="h-[30vh] w-[100vw]"
+      className="h-[35vh] w-screen"
       style={{
         backgroundImage: `url(${img})`,
+
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}

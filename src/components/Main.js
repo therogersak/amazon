@@ -53,7 +53,7 @@ function Main() {
           <div className="flex gap-10 w-full p-5 items-center flex-col md:flex-row">
             <div className="w-full max-w-[550px]">
               <img
-                src={data?.thumbnail && img || data?.thumbnail}
+                src={img ? img : data?.thumbnail}
                 alt={data?.title}
                 title={data?.title}
                 className="w-full h-full border shadow-xl object-contain"
