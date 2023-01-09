@@ -16,8 +16,6 @@ function Banner() {
   return (
     <Swiper
       slidesPerView={3}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
       modules={[Pagination, Autoplay, EffectFade]}
       autoplay
       pagination={{ clickable: true }}

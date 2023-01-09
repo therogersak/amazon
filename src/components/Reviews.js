@@ -20,7 +20,6 @@ function Reviews() {
   // => featching comments
   const { data } = useGetCommentsQuery();
   const res = useAddCommentMutation();
-  console.trace(res);
 
   return (
     <div className="p-5">

@@ -6,7 +6,6 @@ import Product from "./Product";
 function Search() {
   const { value } = useSelector((state) => state.search);
   const { data } = useGetProductBySearchQuery(value);
-  console.log(data);
 
   return (
     <div>

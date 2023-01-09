@@ -1,6 +1,6 @@
 import React from "react";
 import SubTotal from "./SubTotal";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteCart } from "../features/CartSlice";
@@ -10,7 +10,6 @@ function Cart() {
   const navigate = useNavigate();
   const { cart } = useSelector((state) => state.cart);
 
- 
 
   return (
     <>
@@ -21,6 +20,7 @@ function Cart() {
               <img
                 src="https://www.seekpng.com/png/detail/35-354177_shopping-cart-cart-ecommerce-shopping-amazon-shopping-cart.png"
                 className="w-full h-full object-contain"
+                alt="cart-ecommerce-shopping-cart"
               />
             </div>
             <h3 className="text-[17px] font-bold">Your cart is empty!</h3>

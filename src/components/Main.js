@@ -9,7 +9,6 @@ import { addCart } from "../features/CartSlice";
 function Main() {
     const dispatch = useDispatch();
     const list = useSelector((state) => state.cart)
-    console.log(list)
   const [img, setImg] = useState("");
   const { id } = useParams();
   const { data } = useGetProductByIdQuery(id);
@@ -27,7 +26,6 @@ function Main() {
       })
       );
 
-      console.log("addd")
   };
   return (
     <>
